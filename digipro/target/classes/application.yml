@@ -1,0 +1,74 @@
+spring:
+  servlet:
+    multipart:
+      maxFileSize: 50MB
+      maxRequestSize: 50MB
+
+  main:
+    allow-bean-definition-overriding: true
+  datasource:
+    url: jdbc:mariadb://localhost:3307/dijiprodb?rewriteBatchedStatements=true
+    password: vindya123
+    username: root
+    driver-class-name: org.mariadb.jdbc.Driver
+    hikari:
+      maximum-pool-size: 20
+      idle-timeout: 100000
+      connection-timeout: 100000
+  jpa:
+    show-sql: false
+    properties:
+      hibernate.jdbc.batch_size: 25
+      hibernate.order_inserts: true
+      hibernate.order_updates: true
+      hibernate.generate_statistics: fase
+  data:
+    rest:
+      base-path: /api
+      detection-strategy: ANNOTATED
+  mail:
+    host: smtpout.secureserver.net
+    password: Rq_8XCzi!d1
+    port: 587
+    username: info@realrupee.com
+    properties:
+      from: info@realrupee.com
+      mail.smtp.ssl.trust: smtpout.secureserver.net
+      mail.smtp.starttls.enable: true
+      mail.smtp.auth: true
+server:
+  port: 8082
+  tomcat:
+    max-http-form-post-size: 500000000
+    max-swallow-size: 500000000
+  servlet:
+    context-path: /digipro-api
+logging:
+
+  level:
+    root: INFO
+    org.springframework.web.servlet.mvc.method.annotation: DEBUG
+    com:
+      sms: DEBUG
+app:
+  realestate:
+    payment:
+      key: rzp_test_LDeHWyzWDgtIPb
+      secret: cJTs0491lWLtZfRe57nOvdEw
+      hooksecret: hooksecret
+      key_prod: rzp_test_LDeHWyzWDgtIPb
+      secret_prod: cJTs0491lWLtZfRe57nOvdEw
+    images: /home/abhinay/Deploy/realestate/images/
+    environment: dev
+    sms:
+      server: textlocal
+      apikey: NDY0YjQ4Mzg2OTc4NDkzNDYzNDQ3OTM2NzYzMzRhNTM=
+    smtp:
+      host: smtp.gmail.com
+      smtpport: 587
+      mailusr: webservice2630@gmail.com
+      mailpwd: stlvtppqqtlnqqjg
+      from: info@realrupee.com
+    googleplusapikey: AIzaSyB29b3g-5wF_UGI-KK-IIkQUiUEIxzRcOs
+    googleclientid: 537181678136-b04s3ej1hjocpk0pk8rov2d0107ltp27.apps.googleusercontent.com
+    access_type: offline
